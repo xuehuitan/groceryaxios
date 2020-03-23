@@ -10,7 +10,7 @@ export default{
           labels:[],
           datasets: [
             {
-              label: 'PSI Readings',
+              label: 'PSI Readings-Singapore',
                data:[],
               //backgroundColor:['aqua','lightgreen','red','orange'],
               borderWidth:0.5,
