@@ -26,7 +26,7 @@ jobs:
       - name: Build
         run: npm run build
       - name: Archive Production Artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@master
         with:
           name: dist
           path: dist
@@ -39,7 +39,7 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@v2
       - name: Deploy to Firebase
-        uses: w9jds/firebase-action@v2
+        uses: w9jds/firebase-action@master
         with:
           args: deploy --project bt3103-2020 --only hosting
         env:
