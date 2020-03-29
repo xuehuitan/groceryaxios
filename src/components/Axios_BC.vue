@@ -34,9 +34,8 @@ export default {
 <style scoped>
 #main{
     content:"";
-    display:table;
-    clear:both;
-    transform: scale(0.75)
+    display:flex;
+    justify-content: center;
 }
 #chart{
   height:350px;
