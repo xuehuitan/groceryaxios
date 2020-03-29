@@ -36,6 +36,7 @@ export default {
     content:"";
     display:flex;
     justify-content: center;
+    transform: scale(0.85);
 }
 #chart{
   height:350px;
