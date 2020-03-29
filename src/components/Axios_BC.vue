@@ -36,7 +36,7 @@ export default {
     content:"";
     display:table;
     clear:both;
-    transform: scale(0.9)
+    transform: scale(0.75)
 }
 #chart{
   height:350px;
