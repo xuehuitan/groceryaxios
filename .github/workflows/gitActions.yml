@@ -4,20 +4,21 @@ name: CI
 
 # Controls when the action will run. Triggers the workflow on push or pull request 
 # events but only for the master branch
-on:
-  push:
+
+on: # name of event(s) that trigger the workflow
+  push: # everytime push on master branch, workflow is triggered
     branches: [ master ]
-  
+
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
-jobs:
+jobs: #jobs
   # This workflow contains a single job called "build"
   build:
-    # The type of runner that the job will run on
+    # The type of runner that the job will run on with that OS
     runs-on: ubuntu-latest
-    
-    # Steps represent a sequence of tasks that will be executed as part of the job
-    steps:
+
+    # Steps represent a sequence of tasks that will be executed as part of the job (can have more than 1)
+    steps: # has access to workspace and fire system
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name : Checkout Repository
         uses: actions/checkout@master
@@ -25,11 +26,10 @@ jobs:
         run: npm install
       - name: Build
         run: npm run build
-      
 
   deploy:
     name: Deploy
-    needs: build
+    needs: build # prerequisite: before deployment ensures that build is done
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
@@ -39,6 +39,6 @@ jobs:
         with:
           args: deploy --project bt3103-2020 --only hosting
         env:
-          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }} # to deploy code
 
-  
+# after actions can go to firebase hosting and check if it is deployed

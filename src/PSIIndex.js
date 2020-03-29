@@ -19,10 +19,8 @@ export default{
               fill:false
             }
           ]
-          
         },
         options: {
-           
             scales:{
                 yAxes:[{
                     ticks:{

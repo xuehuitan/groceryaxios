@@ -1,6 +1,6 @@
 .firebase
 node_modules
-
+firebase.js
 
 # local env files
 .env.local
